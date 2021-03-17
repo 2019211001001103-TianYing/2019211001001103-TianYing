@@ -8,6 +8,7 @@
         <servlet-class>com.TianYing.week2.demo.HelloWorldServlet</servlet-class>
     </servlet>
 <servlet-mapping>
+
     <servlet-name>anyName</servlet-name>
     <url-pattern>/hello</url-pattern>
 </servlet-mapping>

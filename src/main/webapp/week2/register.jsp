@@ -19,6 +19,8 @@
     Birthdate:<input type="date" name="Birthdate"><br/>
     Gender<input type="radio" checked="checked" name="sex">Man<input type="radio" name="sex"/>Feman<br/>
     <input type="submit" value="Register"/>
+
+
 </form>
 </body>
 </html>
