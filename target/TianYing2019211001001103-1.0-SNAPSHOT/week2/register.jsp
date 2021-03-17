@@ -13,11 +13,11 @@
 <body>
 <form method="post">
     New User Registration<br/>
-    Username:<input type="text" name="username" required="true"><br/>
-    Password:<input type="text" name="Password"><br/>
-    Email:<input type="text" name="Email" minlength="8"><br/>
+    Username:<input type="text" name="username" required="required"><br/>
+    Password:<input type="text" name="Password" required="required" minlength="8"><br/>
+    Email:<input type="text" name="Email"><br/>
     Birthdate:<input type="date" name="Birthdate"><br/>
-    Gender Male<input type="radio"> Female<input type="radio"><br/>
+    Gender<input type="radio" checked="checked" name="sex">Man<input type="radio" name="sex"/>Feman<br/>
     <input type="submit" value="Register"/>
 </form>
 </body>

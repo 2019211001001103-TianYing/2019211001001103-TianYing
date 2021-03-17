@@ -13,6 +13,8 @@ public class HelloWorldServlet extends HttpServlet {
         //get writer - java.io
         PrintWriter writer = response.getWriter();
         writer.println("Hello Client !!!");
+
+
     }
     public void doPost(HttpServletRequest request, HttpServletResponse response){
 
