@@ -12,6 +12,7 @@ public class HelloWorldServlet extends HttpServlet {
     String Name="TianYing";
     String ID="2019211001001103";
 
+
     public void doGet(HttpServletRequest request, HttpServletResponse response)throws IOException {
         //get writer - java.io
         PrintWriter writer = response.getWriter();
