@@ -10,7 +10,6 @@ import java.util.Date;
 
 public class HelloWorldServlet extends HttpServlet {
     String Name="TianYing";
-
     String ID="2019211001001103";
 
 
