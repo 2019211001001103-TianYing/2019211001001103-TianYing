@@ -1,4 +1,4 @@
-package com.TianYing.week2.demo;
+package com.TianYing;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
