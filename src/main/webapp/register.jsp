@@ -13,6 +13,7 @@
 <body>
 <form method="post" action="register">
     New User Registration<br/>
+    id:<input type="text" name="id" required="required"><br/>
     Username:<input type="text" name="username" required="required"><br/>
     Password:<input type="text" name="Password" required="required" minlength="8"><br/>
     Email:<input type="text" name="Email"><br/>
