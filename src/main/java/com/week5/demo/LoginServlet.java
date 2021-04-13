@@ -12,13 +12,14 @@ import java.sql.*;
 
 @WebServlet(name = "LoginServlet", value = "/login")
 public class LoginServlet extends HttpServlet {
-    public Connection dbConn;
-    public void init(){
-        try{
-            Class.forName(getServletConfig().getServletContext().getInitParameter("driver"));
-            dbConn= DriverManager.getConnection(getServletConfig().getServletContext().getInitParameter("url"),getServletConfig().getServletContext().getInitParameter("username"),getServletConfig().getServletContext().getInitParameter("password"));
-            System.out.println(dbConn);
-        }catch (Exception e){System.out.println(e);}
+    public Connection dbConn=null;
+    public void init() throws ServletException {
+     //   try{
+       //     Class.forName(getServletConfig().getServletContext().getInitParameter("driver"));
+    //        dbConn= DriverManager.getConnection(getServletConfig().getServletContext().getInitParameter("url"),getServletConfig().getServletContext().getInitParameter("username"),getServletConfig().getServletContext().getInitParameter("password"));
+   //         System.out.println(dbConn);
+     //   }catch (Exception e){System.out.println(e);}
+   super.init();
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -43,15 +44,22 @@ doPost(request,response);
             re = prep.executeQuery();
             if (re.next()) {
                 isValid = true;
+                request.setAttribute("id",re.getInt("id"));
+                request.setAttribute("username",re.getString("username"));
+                request.setAttribute("Password",re.getString("Password"));
+                request.setAttribute("Email",re.getString("Email"));
+                request.setAttribute("Gender",re.getString("Gender"));
+                request.setAttribute("Birthdate",re.getString("Birthdate"));
+                request.getRequestDispatcher("userInfo.jsp").forward(request,response);
             }
         } catch (SQLException e) {
             System.out.println(e);
         }
         if (isValid) {
-            writer.println("Login Success!!!");
-            writer.println("Welcome" + username);
-        } else {
-            writer.println("Username or Password Error!!!");
+            request.setAttribute("message","Username or Password Error!!!");
+            request.getRequestDispatcher("login.jsp").forward(request,response);
+           // writer.println("Login Success!!!");
+           // writer.println("Welcome" + username);
         }
     }
 }
