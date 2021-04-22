@@ -30,12 +30,12 @@ public class RegisterServlet extends HttpServlet {
         doPost(request,response);
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username=request.getParameter("username");
-        String Password=request.getParameter("Password");
-        String Email=request.getParameter("Email");
-        String Birthdate=request.getParameter("Birthdate");
-        String sex=request.getParameter("sex");
-        PrintWriter writer=response.getWriter();
+        String Username = request.getParameter("Username");
+        String password = request.getParameter("password");
+        String Email = request.getParameter("Email");
+        String Gender = request.getParameter("sex");
+        String BirthDate = request.getParameter("BirthDate");
+        PrintWriter writer = response.getWriter();
 //        writer.println("<br>");
 //        writer.println("<br>username:"+username);
 //        writer.println("<br>password:"+password);
@@ -43,12 +43,12 @@ public class RegisterServlet extends HttpServlet {
 //        writer.println("<br>gender:"+sex);
 //        writer.println("<br>birthDate:"+birth);
 //        System.out.println("gotted");
-        String[][] ret=new String[100][6];
+        String[][] arr=new String[100][6];
         int a=0;
         try {
-           System.out.println("con:"+con);
+            System.out.println("con:"+con);
             Statement createDbStatement = con.createStatement();
-            String add="insert into usertable values('"+username+"','"+Password+"','"+Email+"','"+Birthdate+"','"+sex+"')";
+            String add="insert into usertable values('"+Username+"','"+password+"','"+Email+"','"+Gender+"','"+BirthDate+"')";
             createDbStatement.executeUpdate(add);
             //            String rs="select * from usertable";
 //            ResultSet result=createDbStatement.executeQuery(rs);

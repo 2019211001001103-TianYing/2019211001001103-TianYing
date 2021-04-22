@@ -10,11 +10,11 @@
 This is my jsp.<br>
 <form method="post" action="register">
     New User Registration<br/>
-    Username:<input type="text" name="username" required="required"><br/>
-    Password:<input type="text" name="Password" required="required" minlength="8"><br/>
-    Email:<input type="text" name="Email"><br/>
-    Birthdate:<input type="date" name="Birthdate"><br/>
+    Username:<input type="text" name="Username" required="required"><br/>
+    Password:<input type="password" name="password" required="required" minlength="8"><br/>
+    Email:<input type="email" name="Email"><br/>
     Gender<input type="radio" name="sex" value="male">male<input type="radio" name="sex" value="female"/>Female<br/>
+    Birthdate:<input type="date" name="BirthDate"><br/>
     <input type="submit" value="Register"/>
 </form>
 <%@include file="footer.jsp"%>

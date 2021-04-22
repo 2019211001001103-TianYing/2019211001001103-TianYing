@@ -6,9 +6,7 @@ import com.TianYing.model.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
@@ -36,23 +34,49 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
-        String Password = request.getParameter("Password");
-        PrintWriter writer=response.getWriter();
-
+        String password = request.getParameter("password");
+        PrintWriter writer = response.getWriter();
         UserDao userDao=new UserDao();
-        try{
-            User user=userDao.findByUsernamePassword(con,username,Password);
-            if (user!=null){
-                request.setAttribute("user",user);
-                request.getRequestDispatcher("WEB-INF/views/userInfo.jsp").forward(request,response);
+        try {
+            User user = userDao.findByUsernamePassword(con, username, password);
+            if(user!=null){
+                String rememberMe=request.getParameter("rememberMe");
+                if(rememberMe!=null && rememberMe.equals("1")){
+                    Cookie usernameCookie=new Cookie("cUsername",user.getUsername());
+                    Cookie passwordCookie=new Cookie("cPassword",user.getPassword());
+                    Cookie rememberMeCookie=new Cookie("cRememberMe",rememberMe);
 
-            }else {
+                    usernameCookie.setMaxAge(5);
+                    passwordCookie.setMaxAge(5);
+                    rememberMeCookie.setMaxAge(5);
+                    response.addCookie(usernameCookie);
+                    response.addCookie(passwordCookie);
+                    response.addCookie(rememberMeCookie);
+                }
+                HttpSession session =  request.getSession();
+                System.out.println("session id-->"+session.getId());
+                session.setMaxInactiveInterval(10);
+                session.setAttribute("user",user);
+
+
+
+
+               // Cookie c=new Cookie("sessionid",""+user.getId());
+               //         c.setMaxAge(10*60);
+               // response.addCookie(c);
+
+
+
+
+
+                request.getRequestDispatcher("WEB-INF/views/userInfo.jsp").forward(request,response);
+            }else{
                 request.setAttribute("message","Username or Password Error!!!");
                 request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request,response);
-
             }
-        }catch (SQLException throwables){
-            throwables.printStackTrace();
+        } catch (Exception e)
+        {
+            e.printStackTrace();
         }
 
 
