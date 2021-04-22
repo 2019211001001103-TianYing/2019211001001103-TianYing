@@ -12,7 +12,7 @@
     <tr>
         <td>username:</td><td><%=request.getAttribute("username")%></td>
     </tr><tr>
-        <td>password:</td><td><%=request.getAttribute("password")%></td>
+        <td>Password:</td><td><%=request.getAttribute("Password")%></td>
 </tr><tr>
         <td>Email:</td><td><%=request.getAttribute("Email")%></td>
 </tr><tr>
