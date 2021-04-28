@@ -1,4 +1,3 @@
-<%@ page import="com.TianYing.model.User" %>
 <html>
  <head>
    <title>My Online Shop</title>
@@ -33,24 +32,10 @@
    </td>
    </tr>
    <tr height="25"><td align="right"><font size="18" color="blue">
-   Welcome,
-  <%
-      User user=(User) session.getAttribute("user");
-      if (user!=null){
-          out.println(user.getUsername());
-
-      }else {
-  %>
-
-       <font size="18" color="red"> Guest</font>
-       <%}  %>
+   Welcome,<font size="18" color="red"> Guest</font>
    </font></td> </tr>
   <tr height="20"><td align="right">
-      <%
-          if (session.getAttribute("user")!=null){
-      %>
-   <br> <a href="logout">Logout</a>
-      <%}        %>
+   <br> <a href="#">Logout</a>
   <br><a href="#">My Cart</a><br/>
 <a href="register.jsp">Register Here</a>
   </td></tr>
