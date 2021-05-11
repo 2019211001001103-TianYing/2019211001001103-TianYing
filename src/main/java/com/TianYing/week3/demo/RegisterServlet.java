@@ -59,6 +59,7 @@ public class RegisterServlet extends HttpServlet {
 //                arr[a][3]=result.getString(4);
 //                arr[a++][4]=result.getString(5);
 //            }
+
             response.sendRedirect("login");
         } catch (Exception e) {
             System.out.println(e);
