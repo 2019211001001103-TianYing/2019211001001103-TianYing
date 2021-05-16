@@ -4,14 +4,14 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-    <servlet>
-        <servlet-name>anyName</servlet-name>
-        <servlet-class>com.TianYing.week2.demo.HelloWorldServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-    <servlet-name>anyName</servlet-name>
-    <url-pattern>/hello</url-pattern>
-</servlet-mapping>
+<!--    <servlet>-->
+<!--        <servlet-name>anyName</servlet-name>-->
+<!--        <servlet-class>com.TianYing.week2.demo.HelloWorldServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--    <servlet-name>anyName</servlet-name>-->
+<!--    <url-pattern>/hello</url-pattern>-->
+<!--</servlet-mapping>-->
    <!--  <servlet>
         <servlet-name>LifeCycleServlet</servlet-name>
         <servlet-class>com.TianYing.week3.demo.LifeCycleServlet</servlet-class>
@@ -50,32 +50,32 @@
     </welcome-file-list>
 
 
-   <filter>
-        <filter-name>HelloServlet</filter-name>
-        <filter-class>com.TianYing.filter.HelloFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>HelloFilter</filter-name>
-        <url-pattern>/hello</url-pattern>
-    </filter-mapping>
+<!--   <filter>-->
+<!--        <filter-name>HelloFilter</filter-name>-->
+<!--        <filter-class>com.TianYing.filter.HelloFilter</filter-class>-->
+<!--    </filter>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>HelloFilter</filter-name>-->
+<!--        <url-pattern>/hello</url-pattern>-->
+<!--    </filter-mapping>-->
 
 
-    <filter>
-        <filter-name>LoggerFilter</filter-name>
-        <filter-class>com.TianYing.filter.LoggerFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>LoggerFilter</filter-name>
-        <url-pattern>/hello</url-pattern>
-    </filter-mapping>
+<!--    <filter>-->
+<!--        <filter-name>LoggerFilter</filter-name>-->
+<!--        <filter-class>com.TianYing.filter.LoggerFilter</filter-class>-->
+<!--    </filter>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>LoggerFilter</filter-name>-->
+<!--        <url-pattern>/hello</url-pattern>-->
+<!--    </filter-mapping>-->
 
 
-    <filter>
-        <filter-name>AuthFilter</filter-name>
-        <filter-class>com.TianYing.filter.AuthFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>AuthFilter</filter-name>
-        <url-pattern>/hello</url-pattern>
-    </filter-mapping>
+<!--    <filter>-->
+<!--        <filter-name>AuthFilter</filter-name>-->
+<!--        <filter-class>com.TianYing.filter.AuthFilter</filter-class>-->
+<!--    </filter>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>AuthFilter</filter-name>-->
+<!--        <url-pattern>/hello</url-pattern>-->
+<!--    </filter-mapping>-->
 </web-app>

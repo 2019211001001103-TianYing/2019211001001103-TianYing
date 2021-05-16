@@ -51,7 +51,7 @@ public class UserDao implements IUserDao{
             user.setUsername(rs.getString("Username"));
             user.setPassword(rs.getString("password"));
             user.setEmail(rs.getString("Email"));
-            user.setGender(rs.getString("Gender"));
+            user.setGender(rs.getString("sex"));
             user.setBirthDate(rs.getDate("BirthDate"));
         }
         return user;

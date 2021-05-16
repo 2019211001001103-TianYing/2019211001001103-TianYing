@@ -16,7 +16,7 @@ public class AdminAuthenticationFilter implements Filter {
         HttpServletRequest httpRequest=(HttpServletRequest) request;
         HttpServletResponse httpResponse=(HttpServletResponse) response;
         HttpSession session=httpRequest.getSession(false);
-        boolean isLoggedIn=(session != null && session.getAttribute("userList")!= null);
+        boolean isLoggedIn=(session != null && session.getAttribute("user")!= null);
         String loginURI=httpRequest.getContextPath()+"/login";
         boolean isLoginRequset=httpRequest.getRequestURI().equals(loginURI);
         boolean isLoginPage=httpRequest.getRequestURI().endsWith("login");

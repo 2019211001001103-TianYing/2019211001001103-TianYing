@@ -14,7 +14,7 @@ public class AdminHomeServlet extends HttpServlet {
         HttpSession session=request.getSession(false);
         if (session!=null&& session.getAttribute("user")!=null) {
             User user = (User) session.getAttribute("user");
-            if ("admin".equals(user.getUsername())) {
+            if ("admin".equals(user.getUsername().trim())) {
                 request.getRequestDispatcher("../WEB-INF/views/admin/index.jsp").forward(request, response);
             } else {
                 session.invalidate();
